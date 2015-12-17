@@ -19,7 +19,7 @@ public class PhotoesAdapter extends CommonAdapter<String> {
     /**
      * 用户选择的图片，存储为图片的完整路径
      */
-    public static List<String> mSelectedImage = new LinkedList<String>();
+    public static List<String> mSelectedImage = new LinkedList<>();
 
     /**
      * 文件夹路径
@@ -33,21 +33,29 @@ public class PhotoesAdapter extends CommonAdapter<String> {
     }
 
     @Override
-    public void convert(final ViewHolder helper, final String item) {
+    public void convert(final ViewHolder holder, final String item) {
         //设置no_pic
-        helper.setImageResource(R.id.id_item_image, R.mipmap.pictures_no);
+        holder.setImageResource(R.id.id_item_image, R.mipmap.pictures_no);
         //设置no_selected
-        helper.setImageResource(R.id.id_item_select,
+        holder.setImageResource(R.id.id_item_select,
                 R.mipmap.picture_unselected);
         //设置图片
-        helper.setImageByUrl(R.id.id_item_image, mDirPath + "/" + item);
+        holder.setImageByUrl(R.id.id_item_image, mDirPath + "/" + item);
 
-        final ImageView mImageView = helper.getView(R.id.id_item_image);
-        final ImageView mSelect = helper.getView(R.id.id_item_select);
+        final ImageView mImageView = holder.getView(R.id.id_item_image);
+        final ImageView mSelect = holder.getView(R.id.id_item_select);
 
         mImageView.setColorFilter(null);
         //设置ImageView的点击事件
-        mImageView.setOnClickListener(new OnClickListener() {
+        mImageView.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mSelect.setOnClickListener(new OnClickListener() {
             //选择，则将图片变暗，反之则反之
             @Override
             public void onClick(View v) {

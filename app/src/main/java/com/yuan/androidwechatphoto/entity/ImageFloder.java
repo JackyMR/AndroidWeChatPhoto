@@ -1,5 +1,7 @@
 package com.yuan.androidwechatphoto.entity;
 
+import java.io.File;
+
 public class ImageFloder {
     /**
      * 图片的文件夹路径
@@ -27,7 +29,7 @@ public class ImageFloder {
 
     public void setDir(String dir) {
         this.dir = dir;
-        int lastIndexOf = this.dir.lastIndexOf("/");
+        int lastIndexOf = this.dir.lastIndexOf(File.separator);
         this.name = this.dir.substring(lastIndexOf);
     }
 

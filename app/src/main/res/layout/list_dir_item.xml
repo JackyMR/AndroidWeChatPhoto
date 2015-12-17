@@ -30,13 +30,15 @@
             android:id="@+id/id_dir_item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="所有图片"
-            android:textSize="10sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/id_dir_item_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:layout_gravity="center"
             android:text="4723张"
             android:textColor="#444"
@@ -44,6 +46,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/dir_item_selector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
