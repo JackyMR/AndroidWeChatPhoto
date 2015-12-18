@@ -2,6 +2,7 @@ package com.yuan.androidwechatphoto.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,6 +77,7 @@ public class ViewHolder {
     public ViewHolder setText(int viewId, String text) {
         TextView view = getView(viewId);
         view.setText(text);
+        view.setTextColor(Color.BLACK);
         return this;
     }
 

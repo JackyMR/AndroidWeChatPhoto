@@ -46,7 +46,7 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
 
     public abstract void convert(ViewHolder holder, T item);
 
-    private ViewHolder getViewHolder(int position, View convertView,
+    protected ViewHolder getViewHolder(int position, View convertView,
                                      ViewGroup parent) {
         return ViewHolder.get(mContext, convertView, parent, mItemLayoutId,
                 position);

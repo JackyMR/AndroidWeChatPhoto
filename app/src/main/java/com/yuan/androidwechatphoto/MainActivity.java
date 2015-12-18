@@ -285,10 +285,16 @@ public class MainActivity extends AppCompatActivity implements ListImageDirPopup
                 R.layout.grid_item, mImgDir.getAbsolutePath());
         mGirdView.setAdapter(mAdapter);
         // mAdapter.notifyDataSetChanged();
-        mImageCount.setText(floder.getCount() + "张");
+        mImageCount.setText(floder.getCount() + " 张");
         mChooseDir.setText(floder.getName());
-        mListImageDirPopupWindow.dismiss();
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                mListImageDirPopupWindow.dismiss();
+            }
+        },200);
     }
 
 }
