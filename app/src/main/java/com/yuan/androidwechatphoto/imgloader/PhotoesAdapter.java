@@ -3,12 +3,15 @@ package com.yuan.androidwechatphoto.imgloader;
 import java.util.LinkedList;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+import com.yuan.androidwechatphoto.ImageActivity;
 import com.yuan.androidwechatphoto.R;
 import com.yuan.androidwechatphoto.utils.CommonAdapter;
 import com.yuan.androidwechatphoto.utils.ViewHolder;
@@ -52,6 +55,9 @@ public class PhotoesAdapter extends CommonAdapter<String> {
             @Override
             public void onClick(View v) {
 
+                if(mContext instanceof Activity){
+                    mContext.startActivity(new Intent(mContext, ImageActivity.class));
+                }
             }
         });
 

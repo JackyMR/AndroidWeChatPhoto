@@ -13,8 +13,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.GridView;
@@ -112,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements ListImageDirPopup
      */
     private void initListDirPopupWindw() {
         mListImageDirPopupWindow = new ListImageDirPopupWindow(
-                ViewGroup.LayoutParams.MATCH_PARENT, (int) (mScreenHeight * 0.7),
+                ViewGroup.LayoutParams.MATCH_PARENT, (int) (mScreenHeight * 0.75),
                 mImageFloders, LayoutInflater.from(getApplicationContext())
                 .inflate(R.layout.list_dir, null));
 
