@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements ListImageDirPopup
         /**
          * 可以看到文件夹的路径和图片的路径分开保存，极大的减少了内存的消耗；
          */
-        mAdapter = new PhotoesAdapter(getApplicationContext(), mImgs,
+        mAdapter = new PhotoesAdapter(this, mImgs,
                 R.layout.grid_item, mImgDir.getAbsolutePath());
         mGirdView.setAdapter(mAdapter);
         mImageCount.setText(totalCount + "张");

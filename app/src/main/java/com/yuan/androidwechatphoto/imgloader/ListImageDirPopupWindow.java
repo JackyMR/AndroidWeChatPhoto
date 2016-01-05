@@ -111,6 +111,9 @@ public class ListImageDirPopupWindow extends BasePopupWindowForListView<ImageFlo
         }
 
         public void updateView(int itemIndex) {
+            if(position_folder_current == itemIndex){
+                return;
+            }
             int visiblePosition = mListDir.getFirstVisiblePosition();
             if (itemIndex - visiblePosition >= 0) {
 
@@ -120,8 +123,11 @@ public class ListImageDirPopupWindow extends BasePopupWindowForListView<ImageFlo
 
             }
             if(position_folder_current - visiblePosition >= 0) {
-                ((ViewHolder) mListDir.getChildAt(position_folder_current - visiblePosition)
-                        .getTag()).getView(R.id.dir_item_selector).setVisibility(View.INVISIBLE);
+                View view = mListDir.getChildAt(position_folder_current - visiblePosition);
+                if(view != null){
+                    ViewHolder holder = (ViewHolder) view.getTag();
+                    holder.getView(R.id.dir_item_selector).setVisibility(View.INVISIBLE);
+                }
             }
         }
     }
